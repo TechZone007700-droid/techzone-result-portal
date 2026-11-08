@@ -1,13 +1,13 @@
-name = "techzone-result-portal"
+name = "techzone-results-portal"
 main = "worker.js"
 compatibility_date = "2026-11-08"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "techzone-results-db"
+database_id = "APNI_DATABASE_ID_YAHAN"
 
 [assets]
 directory = "./public"
 binding = "ASSETS"
 run_worker_first = ["/api/*"]
-
-[[d1_databases]]
-binding = "DB"
-database_name = "techzone-results"
-database_id = "REPLACE-WITH-YOUR-D1-DATABASE-ID"
