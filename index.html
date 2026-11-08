@@ -277,6 +277,69 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px}th,td{p
   }
 }
 
+
+/* Compact result card: reduce excessive vertical gaps on phones and keep A4 print content balanced. */
+@media screen {
+  .result { min-height:0; }
+  .result-head { padding-top:12px; padding-bottom:10px; }
+  .result-logo { width:min(270px,78%); max-height:88px; margin-bottom:4px; }
+  .academy { margin-top:2px; }
+  .result-title { margin:18px 0 5px; line-height:1.08; }
+  .tag { line-height:1.3; }
+  .intro { margin:14px 0 5px; }
+  .studentname { padding:5px 0 9px; }
+  .father { margin:8px 0 12px; }
+  .course { margin:10px 0; line-height:1.15; }
+  .meta { margin-top:10px; margin-bottom:10px; }
+  .meta div { padding-top:7px; padding-bottom:7px; }
+  .marks { margin-top:16px; }
+  .markshead { padding-top:9px; padding-bottom:9px; }
+  .marksbody { padding-top:12px; padding-bottom:12px; }
+  .percent { margin-top:16px; padding:8px 10px; }
+  .percent b { font-size:29px; }
+  .sig { margin-top:36px; }
+  .foot { margin-top:20px; line-height:1.3; }
+}
+@media screen and (max-width:760px) {
+  .result { padding:16px 16px; }
+  .result-head { padding-top:9px; padding-bottom:8px; }
+  .result-logo { width:min(245px,76%); max-height:76px; }
+  .result-title { margin-top:14px; margin-bottom:4px; }
+  .intro { margin-top:10px; margin-bottom:4px; }
+  .father { margin-top:6px; margin-bottom:8px; }
+  .course { margin-top:8px; margin-bottom:8px; }
+  .meta { margin-top:8px; margin-bottom:8px; }
+  .meta div { padding-top:6px; padding-bottom:6px; }
+  .marks { margin-top:12px; }
+  .marksbody { padding-top:10px; padding-bottom:10px; }
+  .percent { margin-top:12px; padding:7px 9px; }
+  .sig { margin-top:28px; }
+  .foot { margin-top:16px; }
+}
+@media screen and (max-width:420px) {
+  .result { padding:14px 12px; }
+  .result-logo { max-height:68px; }
+  .sig { margin-top:24px; }
+  .foot { margin-top:13px; }
+}
+@media print {
+  .result-head { padding:8mm 8px 5mm !important; }
+  .result-logo { width:min(72%, 250px) !important; max-height:24mm !important; margin-bottom:2mm !important; }
+  .result-title { margin:7mm 0 2mm !important; }
+  .intro { margin:4mm 0 1mm !important; }
+  .studentname { padding:2mm 0 3mm !important; }
+  .father { margin:2mm 0 3mm !important; }
+  .course { margin:3mm 0 !important; }
+  .meta { margin-top:3mm !important; margin-bottom:3mm !important; }
+  .meta div { padding:2.2mm 1mm !important; }
+  .marks { margin-top:5mm !important; }
+  .markshead { padding:3mm 2mm !important; }
+  .marksbody { padding:5mm 2mm !important; }
+  .percent { margin-top:5mm !important; padding:3mm !important; }
+  .sig { margin-top:17mm !important; }
+  .foot { margin-top:8mm !important; }
+}
+
 </style></head>
 <body>
 <header><b>TechZone Computer Academy</b><small>TECHNOLOGY　 •　 SKILLS　 •　 SUCCESS</small></header>
