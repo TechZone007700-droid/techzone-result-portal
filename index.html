@@ -340,6 +340,96 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px}th,td{p
   .foot { margin-top:8mm !important; }
 }
 
+
+/* Final responsive certificate layout + compact, one-page A4 print */
+@media screen and (max-width: 760px) {
+  html, body { width:100%; max-width:100%; overflow-x:hidden; }
+  main { width:100%; max-width:100%; padding-left:10px; padding-right:10px; }
+  #resultScreen { width:100%; min-width:0; }
+  #resultScreen > .actions { width:100%; max-width:100% !important; display:flex; gap:8px; padding:0; }
+  #resultScreen > .actions button { flex:1 1 0; min-width:0; white-space:normal; line-height:1.25; padding:11px 8px; }
+  .result {
+    width:100%; max-width:100%; min-width:0; min-height:0;
+    height:auto; margin:0 auto; padding:18px 12px 22px;
+    box-sizing:border-box; overflow:visible;
+  }
+  .result:before { inset:8px; border-width:3px; }
+  .result:after { inset:15px; }
+  .result-inner { position:relative; width:100%; max-width:100%; min-width:0; padding:0 8px; box-sizing:border-box; }
+  .result-head { padding:12px 4px 10px; }
+  .result-logo { width:min(250px,82%); max-height:100px; margin-bottom:3px; }
+  .academy { font-size:13px; line-height:1.25; letter-spacing:1px; }
+  #pResultId { display:block; max-width:100%; box-sizing:border-box; text-align:right; white-space:normal; overflow-wrap:anywhere; word-break:break-word; font-size:clamp(9px,2.6vw,11px) !important; margin:8px 0 0 !important; }
+  .result-title { margin:16px 0 4px; padding:0 2px; font-size:clamp(22px,5.7vw,30px); line-height:1.1; letter-spacing:2px; overflow-wrap:anywhere; }
+  .tag { width:100%; padding:0 2px; box-sizing:border-box; font-size:clamp(9px,2.45vw,11px); line-height:1.35; letter-spacing:1px; white-space:normal; overflow-wrap:anywhere; }
+  .intro { margin:14px 0 5px; padding:0 3px; font-size:clamp(13px,3.7vw,16px); line-height:1.35; }
+  .studentname { margin:0 3%; padding:5px 0 9px; font-size:clamp(23px,6vw,28px); line-height:1.15; overflow-wrap:anywhere; }
+  .father { margin:9px 0 12px; padding:0 3px; line-height:1.35; font-size:clamp(13px,3.7vw,16px); overflow-wrap:anywhere; }
+  .course { margin:10px 0 12px; padding:0 3px; font-size:clamp(18px,4.8vw,23px); line-height:1.2; letter-spacing:1px; overflow-wrap:anywhere; }
+  .meta { grid-template-columns:minmax(0,1fr); gap:0; margin:12px 0 0; }
+  .meta div { min-width:0; padding:7px 2px; gap:5px 8px; font-size:clamp(12px,3.4vw,14px); }
+  .meta span { flex:1 1 40%; min-width:0; }
+  .meta strong { flex:1 1 48%; min-width:0; text-align:right; overflow-wrap:anywhere; word-break:break-word; }
+  .marks { width:100%; max-width:100%; margin:16px 0 0; box-sizing:border-box; }
+  .markshead,.marksbody { grid-template-columns:minmax(0,1.2fr) minmax(0,.9fr) minmax(0,.9fr); }
+  .markshead { padding:9px 2px; font-size:clamp(8px,2.2vw,10px); line-height:1.25; letter-spacing:0; }
+  .marksbody { padding:12px 2px; font-size:clamp(14px,3.7vw,19px); line-height:1.2; }
+  .marksbody > * { min-width:0; overflow-wrap:anywhere; word-break:normal; }
+  .percent { width:min(205px,88%); margin:16px auto 0; padding:9px 6px; box-sizing:border-box; }
+  .percent b { font-size:clamp(27px,7vw,32px); }
+  .sig { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:18px; margin:42px 3% 0; }
+  .sig div { min-width:0; padding-top:7px; font-size:12px; }
+  .foot { width:100%; max-width:100%; box-sizing:border-box; margin:22px auto 0; padding:0 2px; font-size:9px; line-height:1.35; letter-spacing:1px; text-align:center; overflow-wrap:anywhere; }
+}
+@media screen and (max-width: 380px) {
+  .result-inner { padding-left:5px; padding-right:5px; }
+  .result { padding-left:10px; padding-right:10px; }
+  .markshead { font-size:8px; }
+  .sig { gap:10px; }
+}
+
+/* Print is intentionally independent of mobile rules and fits the complete card on one A4 page. */
+@page { size:A4 portrait; margin:0; }
+@media print {
+  html, body { width:210mm !important; height:297mm !important; margin:0 !important; padding:0 !important; overflow:hidden !important; background:#fff !important; }
+  body { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  header, .no-print { display:none !important; }
+  main { width:210mm !important; max-width:none !important; height:297mm !important; margin:0 !important; padding:0 !important; }
+  #resultScreen { display:block !important; width:210mm !important; height:297mm !important; margin:0 !important; padding:0 !important; }
+  .result {
+    position:relative !important; display:block !important; box-sizing:border-box !important;
+    width:210mm !important; min-width:210mm !important; max-width:210mm !important;
+    height:297mm !important; min-height:297mm !important; max-height:297mm !important;
+    margin:0 !important; padding:8mm 12mm 9mm !important;
+    overflow:hidden !important; box-shadow:none !important;
+    break-inside:avoid !important; page-break-inside:avoid !important;
+  }
+  .result:before { inset:9px !important; }
+  .result:after { inset:16px !important; }
+  .result-inner { width:100% !important; max-width:100% !important; padding:0 5mm !important; box-sizing:border-box !important; }
+  .result-head { padding:8px 6px 8px !important; }
+  .result-logo { width:250px !important; max-height:92px !important; margin-bottom:2px !important; }
+  .academy { font-size:14px !important; line-height:1.15 !important; }
+  #pResultId { margin:6px 0 0 !important; font-size:9px !important; white-space:normal !important; overflow-wrap:anywhere !important; }
+  .result-title { margin:12px 0 4px !important; font-size:30px !important; line-height:1.05 !important; letter-spacing:3px !important; }
+  .tag { font-size:10px !important; line-height:1.2 !important; letter-spacing:2px !important; }
+  .intro { margin:12px 0 4px !important; font-size:14px !important; line-height:1.2 !important; }
+  .studentname { padding:4px 0 8px !important; font-size:27px !important; line-height:1.1 !important; }
+  .father { margin:8px 0 10px !important; font-size:14px !important; line-height:1.2 !important; }
+  .course { margin:9px 0 10px !important; font-size:21px !important; line-height:1.15 !important; }
+  .meta { margin:10px 5% 0 !important; gap:0 18px !important; }
+  .meta div { padding:6px 3px !important; font-size:11px !important; }
+  .marks { margin:14px 5% 0 !important; }
+  .markshead { padding:10px 4px !important; font-size:10px !important; }
+  .marksbody { padding:13px 4px !important; font-size:19px !important; line-height:1.15 !important; }
+  .percent { margin:14px auto 0 !important; padding:8px !important; width:190px !important; }
+  .percent small { font-size:9px !important; }
+  .percent b { font-size:29px !important; }
+  .sig { margin:36px 8% 0 !important; gap:55px !important; }
+  .sig div { padding-top:7px !important; font-size:11px !important; }
+  .foot { margin:17px auto 0 !important; padding:0 3px !important; font-size:9px !important; line-height:1.25 !important; letter-spacing:1.4px !important; white-space:normal !important; overflow-wrap:anywhere !important; }
+}
+
 </style></head>
 <body>
 <header><b>TechZone Computer Academy</b><small>TECHNOLOGY　 •　 SKILLS　 •　 SUCCESS</small></header>
