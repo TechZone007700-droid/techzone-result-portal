@@ -5,7 +5,7 @@ compatibility_date = "2026-11-08"
 [[d1_databases]]
 binding = "DB"
 database_name = "techzone-results-db"
-database_id = "APNI_DATABASE_ID_YAHAN"
+database_id = "a8cf8d78-da6f-4a92-bf11-75770b700242"
 
 [assets]
 directory = "./public"
