@@ -38,6 +38,245 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px}th,td{p
 @media(max-width:650px){main{margin:16px auto}.panel{padding:18px}.grid2{grid-template-columns:1fr}.result{padding:20px 18px;min-height:0}.result-title{font-size:28px}.result-logo{width:min(300px,88%);max-height:120px}.academy{font-size:15px}.studentname{font-size:25px}.meta{grid-template-columns:1fr}.sig{gap:25px;margin-top:65px}.foot{margin-top:35px}}
 @page{size:A4;margin:0}
 @media print{body{background:white}header,.no-print{display:none!important}main{margin:0;padding:0;max-width:none}#resultScreen{display:block!important}.result{width:210mm;height:297mm;min-height:297mm;max-width:none;margin:0;padding:12mm 13mm;box-shadow:none}.result:before{inset:12px}.result:after{inset:20px}}
+
+
+/* TechZone layout corrections: mobile/tablet only; desktop styles remain unchanged. */
+@media screen and (max-width: 760px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  main {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  header b {
+    display: block;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+  .admin-layout, .center, .panel {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .panel {
+    overflow-wrap: anywhere;
+  }
+  .grid2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .nav {
+    width: 100%;
+    align-items: stretch;
+  }
+  .nav button {
+    flex: 1 1 145px;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .actions {
+    width: 100%;
+  }
+  .actions button {
+    min-width: 0;
+    min-height: 44px;
+  }
+  input, select, button {
+    max-width: 100%;
+  }
+  .tablewrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tablewrap table {
+    min-width: 620px;
+  }
+  #studentsTable {
+    width: 100%;
+  }
+  .result {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 20px 16px;
+    overflow-wrap: anywhere;
+  }
+  .result-inner {
+    min-width: 0;
+  }
+  .result-head {
+    padding: 18px 6px 14px;
+  }
+  .result-logo {
+    width: min(300px, 88%);
+    max-width: 100%;
+    height: auto;
+  }
+  .result-title {
+    font-size: clamp(23px, 6vw, 28px);
+    letter-spacing: 2px;
+    margin-top: 24px;
+  }
+  .tag {
+    letter-spacing: 2px;
+    line-height: 1.5;
+  }
+  .studentname {
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: clamp(21px, 5.5vw, 25px);
+    overflow-wrap: anywhere;
+  }
+  .course {
+    font-size: clamp(18px, 5vw, 22px);
+    overflow-wrap: anywhere;
+  }
+  .meta {
+    margin-left: 2%;
+    margin-right: 2%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .meta div {
+    min-width: 0;
+    align-items: flex-start;
+  }
+  .meta strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .marks {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .markshead, .marksbody {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .markshead {
+    font-size: 9px;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+  .marksbody {
+    font-size: clamp(15px, 4vw, 19px);
+    overflow-wrap: anywhere;
+  }
+  .percent {
+    max-width: 100%;
+  }
+  .sig {
+    gap: clamp(16px, 5vw, 25px);
+    margin: 58px 3% 0;
+  }
+  .foot {
+    margin-top: 30px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  main {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+  .panel {
+    padding: 15px;
+  }
+  .result {
+    padding: 16px 11px;
+  }
+  .markshead {
+    font-size: 8px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .marksbody {
+    font-size: 14px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .sig {
+    gap: 12px;
+  }
+}
+
+/* A4 output: reset the old 1123px minimum that can exceed a 297mm page. */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+@media print {
+  html, body {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #fff !important;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  header, .no-print {
+    display: none !important;
+  }
+  main {
+    width: 210mm !important;
+    max-width: none !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #resultScreen {
+    display: block !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+  .result {
+    box-sizing: border-box !important;
+    position: relative !important;
+    width: 210mm !important;
+    min-width: 210mm !important;
+    max-width: 210mm !important;
+    height: 297mm !important;
+    min-height: 0 !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 12mm 13mm !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+  .result:before {
+    inset: 12px !important;
+  }
+  .result:after {
+    inset: 20px !important;
+  }
+}
+
 </style></head>
 <body>
 <header><b>TechZone Computer Academy</b><small>TECHNOLOGY　 •　 SKILLS　 •　 SUCCESS</small></header>
